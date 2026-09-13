@@ -1,0 +1,481 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: azure;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: none;
+  position: relative;
+  background-color: black;
+  height: 100vh;
+  padding-top: 20px;
+}
+
+.container h1 {
+  color: #f5f5f5;
+  text-align: center;
+  font-weight: lighter;
+  font-size: 24px;
+}
+
+.game {
+  width: 400px;
+  height: 400px;
+  margin: auto;
+  border: 2px solid yellow;
+  perspective: 2000px;
+  position: relative;
+  transition: 1s;
+  margin-top: 10px;
+  position: relative;
+}
+
+.jawaban {
+  display: none;
+}
+
+.flip-card {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: 1s;
+}
+
+.flip-front,
+.flip-back {
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+}
+
+.flip-front img {
+  width: 100%;
+  height: 300px;
+}
+
+.flip-front .pertanyaan {
+  height: 100px;
+  background-color: fuchsia;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  justify-content: start;
+  box-sizing: border-box;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+  width: 100%;
+  height: 100%;
+  background-color: aliceblue;
+}
+
+.alert-betul {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url(../assets/gif/5.png);
+  background-position: center;
+  background-size: cover;
+  display: none;
+}
+
+.alert-salah {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url(../assets/gif/4.png);
+  background-position: center;
+  background-size: cover;
+  display: none;
+}
+
+.answer {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.answer .choice {
+  width: 48%;
+  height: 40px;
+  background-color: blue;
+  font-size: 20px;
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.answer .choice:hover {
+  background-color: blueviolet;
+}
+
+.score {
+  width: 400px;
+  height: 40px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px rgba(200, 100, 10, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
+  color: black;
+  margin: 20px auto;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.score span {
+  margin-left: 10px;
+}
+
+/* halaman muka */
+
+.halaman-muka {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: beige;
+  height: 100vh;
+  flex-direction: column;
+  text-align: center;
+}
+
+.halaman-muka .menuTitle {
+  font-size: 50px;
+}
+
+.halaman-muka .menu-wrapper {
+  width: 50%;
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin: 50px 0;
+  align-items: center;
+}
+
+.halaman-muka .materiPembelajaranBtn,
+.halaman-muka .tujuanPembelajaranBtn,
+.halaman-muka .caraPermainanBtn,
+.halaman-muka .tentangGimBtn {
+  height: 50px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: greenyellow;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 300px;
+  transition: 0.2s;
+  color: blue;
+}
+.halaman-muka .materiPembelajaranBtn:hover,
+.halaman-muka .tujuanPembelajaranBtn:hover,
+.halaman-muka .caraPermainanBtn:hover,
+.halaman-muka .tentangGimBtn:hover {
+  background-color: aqua;
+  transform: scale(1.03);
+  color: fuchsia;
+}
+
+.halaman-muka .mulaiBtn {
+  width: 200px;
+  height: 50px;
+  background-color: blue;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  color: #f5f5f5;
+  display: flex;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.2s;
+}
+
+.halaman-muka .mulaiBtn:hover {
+  background-color: royalblue;
+  transform: scale(1.04);
+  color: whitesmoke;
+}
+
+.materi-pembelajaran {
+  position: relative;
+  width: 70%;
+  display: flex;
+  margin: auto;
+  display: none;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.tujuan-pembelajaran {
+  position: relative;
+  width: 60%;
+  display: flex;
+  display: none;
+  justify-content: center;
+  margin: auto;
+  margin-top: 30px;
+  color: #555;
+}
+
+.tujuan-pembelajaran li {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.tujuan-pembelajaran p {
+  margin-top: 10px;
+  font-weight: lighter;
+}
+
+.cara-permainan {
+  position: relative;
+  width: 60%;
+  display: flex;
+  margin: auto;
+  display: none;
+  margin-top: 30px;
+}
+
+.cara-permainan li {
+  margin-top: 10px;
+}
+
+.tentang-gim {
+  position: relative;
+  width: 70%;
+  display: flex;
+  margin: 30px auto;
+  display: none;
+}
+
+.tentangGimBtn a {
+  text-decoration: none;
+  color: blue;
+}
+
+.tentangGimBtn a:hover {
+  color: fuchsia;
+}
+
+.backBtn {
+  position: fixed;
+  right: 140px;
+  bottom: 90px;
+  padding: 8px 15px;
+  border-radius: 10px;
+  background-color: greenyellow;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.success {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  box-shadow: 3px 3px 6px rgba(200, 100, 20, 0.4);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  text-align: center;
+  background-image: url(../assets/gif/confetti.gif);
+  background-size: cover;
+  background-color: #f5f5f5;
+  padding-top: 30px;
+  border-radius: 15px;
+  display: none;
+}
+
+.successBtn {
+  text-decoration: none;
+  font-size: 18px;
+  padding: 6px 10px;
+  background-color: aquamarine;
+  color: black;
+  margin-top: 10px;
+  border-radius: 10px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.fail {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  box-shadow: 3px 3px 6px rgba(200, 100, 20, 0.4);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  text-align: center;
+  background-image: url(../assets/gif/kodok.gif);
+  background-size: cover;
+  background-position: bottom;
+  background-color: #f5f5f5;
+  padding-top: 30px;
+  border-radius: 15px;
+  display: none;
+}
+
+.failBtn {
+  text-decoration: none;
+  font-size: 18px;
+  padding: 6px 10px;
+  background-color: aquamarine;
+  color: black;
+  margin-top: 10px;
+  border-radius: 10px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+@media (max-width: 568px) {
+  body {
+    overflow: auto;
+  }
+
+  .container {
+    overflow: hidden;
+    height: 100vh;
+  }
+  .container h1 {
+    font-size: 18px;
+  }
+
+  .score {
+    width: 350px;
+    font-size: 16px;
+    margin: 10px auto;
+  }
+  .game {
+    width: 350px;
+    height: 350px;
+  }
+
+  .game .pertanyaan {
+    height: 70px;
+    font-size: 16px;
+  }
+
+  .answer .choice {
+    font-size: 14px;
+  }
+
+  .game img {
+    height: 280px;
+  }
+
+  .backBtn {
+    width: 350px;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 35px;
+  }
+
+  .halaman-muka .menu-wrapper {
+    width: 80%;
+  }
+
+  .halaman-muka .materiPembelajaranBtn,
+  .halaman-muka .tujuanPembelajaranBtn,
+  .halaman-muka .caraPermainanBtn,
+  .halaman-muka .profilPengembangBtn {
+    padding: 5px 20px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: greenyellow;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 13px;
+    width: 100%;
+  }
+
+  .halaman-muka .materiPembelajaranBtn:hover,
+  .halaman-muka .tujuanPembelajaranBtn:hover,
+  .halaman-muka .caraPermainanBtn:hover,
+  .halaman-muka .profilPengembangBtn:hover {
+    background-color: aqua;
+    transform: scale(1.03);
+  }
+
+  .halaman-muka .menuTitle {
+    width: 80%;
+    font-size: 30px;
+    /* font-weight: bold; */
+  }
+
+  .halaman-muka .menu-wrapper {
+    gap: 15px;
+  }
+  .halaman-muka .mulaiBtn {
+    margin-top: 60px;
+    width: 300px;
+  }
+
+  .halaman-muka .tujuan-pembelajaran {
+    font-size: 15px;
+    font-weight: lighter;
+    color: #555;
+  }
+
+  .materi-pembelajaran h2,
+  .tujuan-pembelajaran h2,
+  .cara-permainan h2 {
+    font-size: 20px;
+  }
+
+  .cara-permainan,
+  .materi-pembelajaran,
+  .tujuan-pembelajaran {
+    width: 80%;
+    padding-bottom: 100px;
+  }
+
+  .question-box {
+    margin-top: 50px;
+    width: 90%;
+  }
+
+  .success,
+  .fail {
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    font-size: 16px;
+  }
+}
