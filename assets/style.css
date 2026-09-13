@@ -33,6 +33,7 @@ body {
   transition: 1s;
   margin-top: 10px;
   position: relative;
+  border-radius: 10px;
 }
 
 .jawaban {
@@ -53,6 +54,8 @@ body {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   position: absolute;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .flip-front img {
@@ -62,15 +65,16 @@ body {
 
 .flip-front .pertanyaan {
   height: 100px;
-  background-color: fuchsia;
-  color: black;
-  font-size: 20px;
-  font-weight: bold;
+  background-color: #f62477;
+  color: white;
+  font-size: 22px;
   display: flex;
   align-items: center;
   padding: 0 8px;
   justify-content: start;
   box-sizing: border-box;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .flip-back {
@@ -372,6 +376,7 @@ body {
   }
   .container h1 {
     font-size: 18px;
+    font-weight: bold;
   }
 
   .score {
@@ -386,7 +391,7 @@ body {
 
   .game .pertanyaan {
     height: 70px;
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .answer .choice {
