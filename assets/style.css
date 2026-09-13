@@ -166,6 +166,9 @@ body {
   height: 100vh;
   flex-direction: column;
   text-align: center;
+  background-image: url(../assets/image/bg_desktop.png);
+  background-size: cover;
+  background-position: center;
 }
 
 .halaman-muka .menuTitle {
@@ -192,18 +195,19 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: greenyellow;
+  background-color: #2d0000;
   border-radius: 10px;
   cursor: pointer;
   width: 300px;
   transition: 0.2s;
-  color: blue;
+  color: white;
+  font-size: 18px;
 }
 .halaman-muka .materiPembelajaranBtn:hover,
 .halaman-muka .tujuanPembelajaranBtn:hover,
 .halaman-muka .caraPermainanBtn:hover,
 .halaman-muka .tentangGimBtn:hover {
-  background-color: aqua;
+  background-color: black;
   transform: scale(1.03);
   color: fuchsia;
 }
@@ -277,12 +281,13 @@ body {
   width: 70%;
   display: flex;
   margin: 30px auto;
+  align-items: center;
   display: none;
 }
 
 .tentangGimBtn a {
   text-decoration: none;
-  color: blue;
+  color: white;
 }
 
 .tentangGimBtn a:hover {
@@ -409,6 +414,12 @@ body {
     bottom: 35px;
   }
 
+  .halaman-muka {
+    background-image: url(../assets/image/bg_hp.png);
+    background-size: cover;
+    background-position: center;
+  }
+
   .halaman-muka .menu-wrapper {
     width: 80%;
   }
@@ -416,16 +427,16 @@ body {
   .halaman-muka .materiPembelajaranBtn,
   .halaman-muka .tujuanPembelajaranBtn,
   .halaman-muka .caraPermainanBtn,
-  .halaman-muka .profilPengembangBtn {
+  .halaman-muka .tentangGimBtn {
     padding: 5px 20px;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     display: flex;
+
     align-items: center;
     justify-content: center;
-    background-color: greenyellow;
     border-radius: 10px;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 15px;
     width: 100%;
   }
 
@@ -433,7 +444,7 @@ body {
   .halaman-muka .tujuanPembelajaranBtn:hover,
   .halaman-muka .caraPermainanBtn:hover,
   .halaman-muka .profilPengembangBtn:hover {
-    background-color: aqua;
+    background-color: black;
     transform: scale(1.03);
   }
 
