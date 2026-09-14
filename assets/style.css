@@ -285,12 +285,14 @@ body {
   display: none;
 }
 
-.tentangGimBtn a {
+.tentangGimBtn a,
+.materiPembelajaranBtn a {
   text-decoration: none;
   color: white;
 }
 
-.tentangGimBtn a:hover {
+.tentangGimBtn a:hover,
+.materiPembelajaranBtn a:hover {
   color: fuchsia;
 }
 
@@ -431,7 +433,6 @@ body {
     padding: 5px 20px;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     display: flex;
-
     align-items: center;
     justify-content: center;
     border-radius: 10px;

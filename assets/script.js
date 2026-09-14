@@ -101,8 +101,7 @@ document.querySelectorAll(".game").forEach(function (game, index, games) {
 
 //kode single page aplication
 materiPembelajaranBtn.addEventListener("click", function () {
-  halamanMuka.style.display = "none";
-  materiPembelajaran.style.display = "block";
+  window.location.href = "assets/materi.pdf";
 });
 tujuanPembelajaranBtn.addEventListener("click", function () {
   halamanMuka.style.display = "none";
