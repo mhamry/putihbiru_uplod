@@ -202,6 +202,7 @@ body {
   transition: 0.2s;
   color: white;
   font-size: 18px;
+  border: 3px solid white;
 }
 .halaman-muka .materiPembelajaranBtn:hover,
 .halaman-muka .tujuanPembelajaranBtn:hover,
@@ -224,6 +225,7 @@ body {
   cursor: pointer;
   margin-top: 10px;
   transition: 0.2s;
+  border: 3px solid white;
 }
 
 .halaman-muka .mulaiBtn:hover {
@@ -417,7 +419,7 @@ body {
   }
 
   .halaman-muka {
-    background-image: url(../assets/image/bg_hp.png);
+    background-image: url(../assets/image/bg_hp_satu.png);
     background-size: cover;
     background-position: center;
   }
@@ -438,7 +440,7 @@ body {
     border-radius: 10px;
     cursor: pointer;
     font-size: 15px;
-    width: 100%;
+    width: 70%;
   }
 
   .halaman-muka .materiPembelajaranBtn:hover,
@@ -452,15 +454,14 @@ body {
   .halaman-muka .menuTitle {
     width: 80%;
     font-size: 30px;
-    /* font-weight: bold; */
   }
 
   .halaman-muka .menu-wrapper {
     gap: 15px;
   }
   .halaman-muka .mulaiBtn {
-    margin-top: 60px;
-    width: 300px;
+    margin-top: 70px;
+    width: 260px;
   }
 
   .halaman-muka .tujuan-pembelajaran {
