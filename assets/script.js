@@ -100,9 +100,9 @@ document.querySelectorAll(".game").forEach(function (game, index, games) {
 });
 
 //kode single page aplication
-materiPembelajaranBtn.addEventListener("click", function () {
-  window.location.href = "assets/materi.pdf";
-});
+// materiPembelajaranBtn.addEventListener("click", function () {
+//   window.location.href = "assets/materi.pdf";
+// });
 tujuanPembelajaranBtn.addEventListener("click", function () {
   halamanMuka.style.display = "none";
   tujuanPembelajaran.style.display = "block";
@@ -112,9 +112,9 @@ caraPermainanBtn.addEventListener("click", function () {
   caraPermainan.style.display = "block";
 });
 
-tentangGimBtn.addEventListener("click", function () {
-  window.location.href = "assets/tentang_gim.pdf";
-});
+// tentangGimBtn.addEventListener("click", function () {
+//   window.location.href = "assets/tentang_gim.pdf";
+// });
 
 backBtns.forEach((backBtns) => {
   backBtns.addEventListener("click", function () {
