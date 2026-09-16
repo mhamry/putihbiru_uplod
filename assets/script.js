@@ -6,10 +6,12 @@ const tujuanPembelajaran = document.querySelector(".tujuan-pembelajaran");
 const caraPermainanBtn = document.querySelector(".caraPermainanBtn");
 const caraPermainan = document.querySelector(".cara-permainan");
 const tentangGimBtn = document.querySelector(".tentangGimBtn");
+const tutorialBtn = document.querySelector(".tutorialBtn");
 const tentangGim = document.querySelector(".tentang-gim");
 const gameContainer = document.querySelector(".container");
 const halamanMuka = document.querySelector(".halaman-muka");
-const materiPembelajaran = document.querySelector(".materi-pembelajaran");
+const materiPembelajaran = document.querySelector(".tutorial");
+const tutorial = document.querySelector(".materi-pembelajaran");
 const backBtn = document.querySelector(".backBtn");
 const backMenus = document.querySelectorAll(".backMenu");
 const mulaiBtn = document.querySelector(".mulaiBtn");
@@ -118,6 +120,10 @@ tentangGimBtn.addEventListener("click", function () {
   halamanMuka.style.display = "none";
   tentangGim.style.display = "block";
 });
+tutorialBtn.addEventListener("click", function () {
+  halamanMuka.style.display = "none";
+  tutorial.style.display = "block";
+});
 
 backMenus.forEach((backMenu) => {
   backMenu.addEventListener("click", function () {
@@ -126,6 +132,7 @@ backMenus.forEach((backMenu) => {
     tujuanPembelajaran.style.display = "none";
     caraPermainan.style.display = "none";
     tentangGim.style.display = "none";
+    tutorial.style.display = "none";
     gameContainer.style.display = "none";
   });
 });

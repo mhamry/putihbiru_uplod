@@ -182,20 +182,21 @@ body {
 }
 
 .halaman-muka .menu-wrapper {
-  width: 50%;
-  height: 200px;
+  width: 40%;
+  height: 400px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 40px;
-  margin: 50px 0;
+  gap: 10px;
+  margin-top: 15px;
   align-items: center;
 }
 
 .halaman-muka .materiPembelajaranBtn,
 .halaman-muka .tujuanPembelajaranBtn,
 .halaman-muka .caraPermainanBtn,
-.halaman-muka .tentangGimBtn {
+.halaman-muka .tentangGimBtn,
+.tutorialBtn {
   height: 50px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
   display: flex;
@@ -213,7 +214,8 @@ body {
 .halaman-muka .materiPembelajaranBtn:hover,
 .halaman-muka .tujuanPembelajaranBtn:hover,
 .halaman-muka .caraPermainanBtn:hover,
-.halaman-muka .tentangGimBtn:hover {
+.halaman-muka .tentangGimBtn:hover,
+.halaman-muka .tutorialBtn:hover {
   background-color: black;
   transform: scale(1.03);
   color: fuchsia;
@@ -229,7 +231,7 @@ body {
   color: #f5f5f5;
   display: flex;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 20px;
   transition: 0.2s;
   border: 3px solid white;
 }
@@ -441,16 +443,21 @@ body {
     background-image: url(../assets/image/bg_hp_satu.png);
     background-size: cover;
     background-position: center;
+    margin-top: -60px;
   }
 
   .halaman-muka .menu-wrapper {
     width: 80%;
+    margin: 20px auto;
+    height: 350px;
+    gap: 0;
   }
 
   .halaman-muka .materiPembelajaranBtn,
   .halaman-muka .tujuanPembelajaranBtn,
   .halaman-muka .caraPermainanBtn,
-  .halaman-muka .tentangGimBtn {
+  .halaman-muka .tentangGimBtn,
+  .halaman-muka .tutorialBtn {
     padding: 5px 20px;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     display: flex;
@@ -467,7 +474,8 @@ body {
   .halaman-muka .materiPembelajaranBtn:hover,
   .halaman-muka .tujuanPembelajaranBtn:hover,
   .halaman-muka .caraPermainanBtn:hover,
-  .halaman-muka .profilPengembangBtn:hover {
+  .halaman-muka .profilPengembangBtn:hover,
+  .halaman-muka .tutorialBtn:hover {
     background-color: black;
     transform: scale(1.03);
   }
@@ -477,11 +485,8 @@ body {
     font-size: 30px;
   }
 
-  .halaman-muka .menu-wrapper {
-    gap: 15px;
-  }
   .halaman-muka .mulaiBtn {
-    margin-top: 70px;
+    margin-top: 10px;
     width: 200px;
   }
 
@@ -492,7 +497,8 @@ body {
   }
 
   .cara-permainan,
-  .tujuan-pembelajaran {
+  .tujuan-pembelajaran,
+  .tutorial {
     width: 80%;
     font-size: 15px;
     color: #555;
