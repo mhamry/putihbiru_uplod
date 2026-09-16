@@ -197,3 +197,76 @@ mulaiBtn.addEventListener("click", function () {
   halamanMuka.style.display = "none";
   gameContainer.style.display = "block";
 });
+
+//file pdf
+// pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+// // Path file PDF kamu
+// const pdfUrl = "assets/tentang_gim_flipcard.pdf";
+// const container = document.getElementById("pdf-container");
+
+// // Load dokumen PDF
+// pdfjsLib
+//   .getDocument(pdfUrl)
+//   .promise.then((pdf) => {
+//     // Loop untuk merender setiap halaman PDF
+//     for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+//       pdf.getPage(pageNum).then((page) => {
+//         const canvas = document.createElement("canvas");
+//         const context = canvas.getContext("2d");
+//         container.appendChild(canvas);
+
+//         // Atur skala tampilan (1.5 cukup responsif & jernih)
+//         const viewport = page.getViewport({ scale: 1.5 });
+//         canvas.height = viewport.height;
+//         canvas.width = viewport.width;
+
+//         // Render halaman ke canvas
+//         const renderContext = {
+//           canvasContext: context,
+//           viewport: viewport,
+//         };
+//         page.render(renderContext);
+//       });
+//     }
+//   })
+//   .catch((error) => {
+//     console.error("Gagal memuat PDF:", error);
+//     container.innerHTML = '<p style="color:red; padding: 20px;">Gagal memuat file PDF.</p>';
+//   });
+// Konfigurasi Worker PDF.js
+pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+// Fungsi Reusable untuk Render PDF
+function renderPDF(containerId, pdfUrl) {
+  const container = document.getElementById(containerId);
+
+  pdfjsLib
+    .getDocument(pdfUrl)
+    .promise.then((pdf) => {
+      for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+        pdf.getPage(pageNum).then((page) => {
+          const canvas = document.createElement("canvas");
+          const context = canvas.getContext("2d");
+          container.appendChild(canvas);
+
+          const viewport = page.getViewport({ scale: 1.5 });
+          canvas.height = viewport.height;
+          canvas.width = viewport.width;
+
+          page.render({
+            canvasContext: context,
+            viewport: viewport,
+          });
+        });
+      }
+    })
+    .catch((error) => {
+      console.error(`Gagal memuat ${pdfUrl}:`, error);
+      container.innerHTML = `<p style="color:red; padding:20px;">Gagal memuat PDF (${pdfUrl})</p>`;
+    });
+}
+
+// Panggil fungsi untuk masing-masing PDF
+renderPDF("pdf-gim", "assets/tentang_gim_flipcard.pdf");
+renderPDF("pdf-materi", "assets/materi.pdf");

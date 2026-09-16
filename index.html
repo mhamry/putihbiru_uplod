@@ -263,11 +263,11 @@
       <button class="backMenu">&laquo; menu</button>
     </div>
 
-    <div class="materi-pembelajaran">
+    <!-- <div class="materi-pembelajaran">
       <h2 style="text-align: center; width: 100%; margin: 20px 0">MATERI PEMBELAJARAN</h2>
       <iframe src="assets/materi.pdf" frameborder="0" width="100%" height="600px"></iframe>
       <button class="backMenu">&laquo; menu</button>
-    </div>
+    </div> -->
 
     <div class="cara-permainan">
       <h2 style="text-align: center; margin: 30px 0">PETUNJUK PERMAINAN</h2>
@@ -280,12 +280,36 @@
       <button class="backMenu">&laquo; menu</button>
     </div>
 
-    <div class="tentang-gim">
+    <!-- <div class="tentang-gim">
       <h2 style="text-align: center">TENTANG GIM</h2>
       <iframe src="assets/tentang_gim_flipcard.pdf" frameborder="0" width="100%" height="600px"></iframe>
 
       <button class="backMenu">&laquo; menu</button>
+    </div> -->
+
+    <!-- <div class="tentang-gim">
+      <h2 style="text-align: center">TENTANG GIM</h2>
+
+      <div id="pdf-container" style="width: 100%; max-height: 600px; overflow-y: auto; text-align: center; background-color: #f5f5f5; border: 1px solid #ccc">
+      
+      </div>
+
+      <button class="backMenu">&laquo; menu</button>
+    </div> -->
+
+    <div class="tentang-gim">
+      <h2 style="text-align: center">TENTANG GIM</h2>
+      <div id="pdf-gim" class="pdf-scroll-container"></div>
+      <button class="backMenu">&laquo; menu</button>
     </div>
+
+    <!-- Element 2: Materi Pembelajaran -->
+    <div class="materi-pembelajaran">
+      <h2 style="text-align: center; width: 100%; margin: 20px 0">MATERI PEMBELAJARAN</h2>
+      <div id="pdf-materi" class="pdf-scroll-container"></div>
+      <button class="backMenu">&laquo; menu</button>
+    </div>
+
     <div class="tutorial">
       <h2 style="text-align: center">VIDIO TUTORIAL</h2>
       <iframe src="" frameborder="0" width="100%" height="600px"></iframe>
@@ -303,6 +327,8 @@
     <div class="fail" id="fail">
       <h2>You are failed. <br /><button class="failBtn">Play again</button></h2>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
     <script src="assets/script.js"></script>
   </body>
