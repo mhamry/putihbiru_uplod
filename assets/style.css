@@ -112,13 +112,13 @@ body {
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 5px;
   justify-content: space-between;
 }
 
 .answer .choice {
   width: 48%;
-  height: 40px;
+  height: 43px;
   background-color: #ff0052;
   font-size: 20px;
   color: white;
@@ -434,7 +434,7 @@ body {
     width: 350px;
     left: 50%;
     transform: translate(-50%);
-    bottom: 35px;
+    bottom: 40px;
   }
 
   .backMenu {
