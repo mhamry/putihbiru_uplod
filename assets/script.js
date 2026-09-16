@@ -10,7 +10,8 @@ const tentangGim = document.querySelector(".tentang-gim");
 const gameContainer = document.querySelector(".container");
 const halamanMuka = document.querySelector(".halaman-muka");
 const materiPembelajaran = document.querySelector(".materi-pembelajaran");
-const backBtns = document.querySelectorAll(".backBtn");
+const backBtn = document.querySelector(".backBtn");
+const backMenus = document.querySelectorAll(".backMenu");
 const mulaiBtn = document.querySelector(".mulaiBtn");
 const success = document.querySelector(".success");
 const successBtn = document.querySelector(".successBtn");
@@ -100,9 +101,10 @@ document.querySelectorAll(".game").forEach(function (game, index, games) {
 });
 
 //kode single page aplication
-// materiPembelajaranBtn.addEventListener("click", function () {
-//   window.location.href = "assets/materi.pdf";
-// });
+materiPembelajaranBtn.addEventListener("click", function () {
+  halamanMuka.style.display = "none";
+  materiPembelajaran.style.display = "block";
+});
 tujuanPembelajaranBtn.addEventListener("click", function () {
   halamanMuka.style.display = "none";
   tujuanPembelajaran.style.display = "block";
@@ -112,12 +114,13 @@ caraPermainanBtn.addEventListener("click", function () {
   caraPermainan.style.display = "block";
 });
 
-// tentangGimBtn.addEventListener("click", function () {
-//   window.location.href = "assets/tentang_gim.pdf";
-// });
+tentangGimBtn.addEventListener("click", function () {
+  halamanMuka.style.display = "none";
+  tentangGim.style.display = "block";
+});
 
-backBtns.forEach((backBtns) => {
-  backBtns.addEventListener("click", function () {
+backMenus.forEach((backMenu) => {
+  backMenu.addEventListener("click", function () {
     halamanMuka.style.display = "flex";
     materiPembelajaran.style.display = "none";
     tujuanPembelajaran.style.display = "none";
@@ -125,6 +128,15 @@ backBtns.forEach((backBtns) => {
     tentangGim.style.display = "none";
     gameContainer.style.display = "none";
   });
+});
+
+backBtn.addEventListener("click", function () {
+  halamanMuka.style.display = "flex";
+  materiPembelajaran.style.display = "none";
+  tujuanPembelajaran.style.display = "none";
+  caraPermainan.style.display = "none";
+  tentangGim.style.display = "none";
+  gameContainer.style.display = "none";
 });
 
 //halaman success

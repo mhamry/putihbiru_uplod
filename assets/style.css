@@ -242,12 +242,11 @@ body {
 
 .materi-pembelajaran {
   position: relative;
-  width: 70%;
+  width: 90%;
   display: flex;
   margin: auto;
   display: none;
   justify-content: center;
-  margin-top: 30px;
 }
 
 .tujuan-pembelajaran {
@@ -304,16 +303,18 @@ body {
   color: fuchsia;
 }
 
-.backBtn {
+.backBtn,
+.backMenu {
   position: fixed;
-  right: 140px;
+  right: 100px;
   bottom: 90px;
   padding: 8px 15px;
   border-radius: 10px;
-  background-color: greenyellow;
+  background-color: blue;
   font-size: 20px;
   cursor: pointer;
   border: 2px solid white;
+  color: aliceblue;
 }
 
 .success {
@@ -381,11 +382,6 @@ body {
   cursor: pointer;
 }
 
-/* css modal iframe */
-.modal-body iframe {
-  height: 550px;
-}
-
 @media (max-width: 568px) {
   body {
     overflow: auto;
@@ -428,6 +424,17 @@ body {
     left: 50%;
     transform: translate(-50%);
     bottom: 35px;
+  }
+
+  .backMenu {
+    position: absolute;
+    background-color: blue;
+    right: 20px;
+    bottom: 35px;
+    padding: 5px 10px;
+    color: #f5f5f5;
+    font-size: 20px;
+    border-radius: 8px;
   }
 
   .halaman-muka {
@@ -476,12 +483,6 @@ body {
     width: 200px;
   }
 
-  .halaman-muka .tujuan-pembelajaran {
-    font-size: 15px;
-    font-weight: lighter;
-    color: #555;
-  }
-
   .materi-pembelajaran h2,
   .tujuan-pembelajaran h2,
   .cara-permainan h2 {
@@ -489,10 +490,18 @@ body {
   }
 
   .cara-permainan,
-  .materi-pembelajaran,
   .tujuan-pembelajaran {
     width: 80%;
-    padding-bottom: 100px;
+    font-size: 15px;
+    font-weight: lighter;
+    color: #555;
+    height: 95vh;
+    margin-top: 16px;
+  }
+
+  .materi-pembelajaran,
+  .tentang-gim {
+    width: 95%;
   }
 
   .question-box {
@@ -507,10 +516,5 @@ body {
     background-size: cover;
     background-position: center;
     font-size: 16px;
-  }
-
-  /* css modal iframe */
-  .modal-body iframe {
-    height: 500px;
   }
 }
