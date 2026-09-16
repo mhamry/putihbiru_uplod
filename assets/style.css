@@ -381,6 +381,11 @@ body {
   cursor: pointer;
 }
 
+/* css modal iframe */
+.modal-body iframe {
+  height: 550px;
+}
+
 @media (max-width: 568px) {
   body {
     overflow: auto;
@@ -502,5 +507,10 @@ body {
     background-size: cover;
     background-position: center;
     font-size: 16px;
+  }
+
+  /* css modal iframe */
+  .modal-body iframe {
+    height: 500px;
   }
 }

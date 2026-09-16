@@ -6,6 +6,11 @@
     <link rel="stylesheet" href="assets/style.css" />
     <!-- botstrap icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+
+    <!-- bootstarp css -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+
     <title>FLIP CARD</title>
   </head>
   <body translate="no">
@@ -226,7 +231,7 @@
       <small style="color: black; font-size: 14px">Gim Edukasi</small>
       <div class="menu-wrapper">
         <div class="tujuanPembelajaranBtn">🚀 Tujuan Pembelajaran</div>
-        <div class="materiPembelajaranBtn"><a href="assets/materi.pdf" target="_blank">🎓 Materi Pembelajaran</a></div>
+        <div class="materiPembelajaranBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">🎓 Materi Pembelajaran</div>
         <div class="caraPermainanBtn">📢 Cara Bermain</div>
         <div class="tentangGimBtn"><a href="assets/tentang_gim_flipcard.pdf" target="_blank">🎮 Tentang Gim</a></div>
       </div>
@@ -294,6 +299,32 @@
       <h2>You are failed. <br /><button class="failBtn">Play again</button></h2>
     </div>
 
+    <!-- awal modal -->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Possessive Adjective</h5>
+
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body p-0">
+            <iframe src="assets/materi.pdf" width="100%" height="500px" style="border: none"> </iframe>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ahir modal -->
+
     <script src="assets/script.js"></script>
+    <!-- scrpt bootsrapt -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   </body>
 </html>
