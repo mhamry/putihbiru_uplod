@@ -460,6 +460,8 @@ body {
     cursor: pointer;
     font-size: 15px;
     width: 70%;
+    height: 40px;
+    text-align: center;
   }
 
   .halaman-muka .materiPembelajaranBtn:hover,
@@ -493,10 +495,10 @@ body {
   .tujuan-pembelajaran {
     width: 80%;
     font-size: 15px;
-    font-weight: lighter;
     color: #555;
     height: 95vh;
     margin-top: 16px;
+    color: black;
   }
 
   .materi-pembelajaran,
