@@ -12,6 +12,7 @@ const gameContainer = document.querySelector(".container");
 const halamanMuka = document.querySelector(".halaman-muka");
 const materiPembelajaran = document.querySelector(".materi-pembelajaran");
 const tutorial = document.querySelector(".tutorial");
+const videoTutorial = document.querySelector(".videoTutorial");
 const backBtn = document.querySelector(".backBtn");
 const backMenus = document.querySelectorAll(".backMenu");
 const mulaiBtn = document.querySelector(".mulaiBtn");
@@ -134,6 +135,8 @@ backMenus.forEach((backMenu) => {
     tentangGim.style.display = "none";
     tutorial.style.display = "none";
     gameContainer.style.display = "none";
+    videoTutorial.pause();
+    videoTutorial.currentTime = 0;
   });
 });
 
