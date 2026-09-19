@@ -524,8 +524,7 @@ body {
   }
 
   .cara-permainan,
-  .tujuan-pembelajaran,
-  .tutorial {
+  .tujuan-pembelajaran {
     width: 80%;
     font-size: 15px;
     color: #555;
@@ -535,8 +534,14 @@ body {
   }
 
   .materi-pembelajaran,
-  .tentang-gim {
-    width: 95%;
+  .tentang-gim,
+  .tutorial {
+    width: 97%;
+  }
+
+  .tutorial iframe {
+    height: 250px;
+    margin-top: 50px;
   }
 
   .question-box {
